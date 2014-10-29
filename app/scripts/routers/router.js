@@ -1,7 +1,6 @@
  var Router = Backbone.Router.extend({
   routes:{
     "": "galleryWall"
-    "": "bigGalleryWall"
   },
   galleryWall: function(){
     var thumbsCollection = new ThumbsCollection();
