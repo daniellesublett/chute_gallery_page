@@ -1,0 +1,49 @@
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Backbone Gallery</title>
+    <link href='http://fonts.googleapis.com/css?family=Diplomata+SC' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/app/stylesheets/styles.css">
+  </head>
+  <body>
+
+    <h1>HERE'S THE GALLERY BELOW</h1>
+
+      <!-- THUMBNAIL WALL -->
+      <div id="thumbnails"></div>
+      <script type="text/template" id="gallery-template">
+        <% for (var i = 0; i<collection.length; i++) {%>
+        <img src="<%= collection[i].thumb %>">
+        <% } %>
+      </script>
+
+
+    <!-- BODY SCRIPTS -->
+      <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js" type="text/javascript"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js" type="text/javascript"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+    <!-- APP SCRIPTS -->
+      <script type="text/javascript" src="app/scripts/app.js"></script>
+
+    <!-- MODELS -->
+      <script type="text/javascript" src="app/scripts/models/big_model.js"></script>
+      <script type="text/javascript" src="app/scripts/models/thumb_model.js"></script>
+
+    <!-- COLLECTIONS -->
+      <script type="text/javascript" src="app/scripts/collections/big_collection.js"></script>
+      <script type="text/javascript" src="app/scripts/collections/thumb_collection.js"></script>
+
+    <!-- VIEWS -->
+      <script type="text/javascript" src="app/scripts/views/big_view.js"></script>
+      <script type="text/javascript" src="app/scripts/views/thumb_view.js"></script>
+      <script type="text/javascript" src="app/scripts/views/gallery_view.js"></script>
+
+      <!-- ROUTER -->
+      <script type="text/javascript" src="app/scripts/routers/router.js"></script>
+
+  </body>
+</html>
