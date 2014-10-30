@@ -3,12 +3,12 @@
     "": "galleryWall"
   },
   galleryWall: function(){
-    var thumbsCollection = new ThumbsCollection();
-    var myThumbView = new ThumbView({
-      collection:thumbsCollection
+    var photoCollection = new BigCollection();
+    var myView = new BigView({
+      collection:photoCollection
     });
-    $('#thumbnails').html(myThumbView.render().$el)
-    myThumbView.collection.fetch({
+    $('#thumbnails').html(myView.render().$el)
+    myView.collection.fetch({
       reset: true
     });
   },

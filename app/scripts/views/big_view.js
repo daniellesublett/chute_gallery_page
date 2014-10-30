@@ -1,16 +1,13 @@
-var Big = Backbone.View.extend({
-    initialize: function () {
-        var that = this;
-        this.collection = new BigCollection();
-        // this.collection.bind("reset", this.render, this);
-        // this.collection.bind("change", this.render, this);
-        this.collection.fetch().done(function(){
-          console.log(that.collection.models);
-          return that.collection.models;
-        });
+var BigView = Backbone.View.extend({
+  initialize: function () {
+        this.listenTo(this.collection, "reset", this.render);
+        this.listenTo(this.collection, "change", this.render);
     },
+    template: _.template($('#gallery-template').html()),
     render: function () {
-        alert("test" + this.collection.toJSON());
+      var that = this;
+      console.log(this.collection.toJSON());
+      this.$el.html(this.template({collection:this.collection.toJSON()}));
+      return this;
     },
 });
-// var myBig = new Big();
