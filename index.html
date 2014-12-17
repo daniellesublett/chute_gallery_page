@@ -18,9 +18,13 @@
       <div id="thumbnails"></div>
 
       <script type="text/template" id="gallery-template">
-        <% for (var i = 0; i<collection.length; i++) {%>
-          <a href="<%= collection[i].url %>" data-lightbox="surfing">
-          <img class="photo" src="<%= collection[i].url %>"></a>
+      <div id='page-buttons'>
+        <button id='next-page'>Next</button>
+        <button id='previous-page'>Previous</button>
+      </div>
+        <% for (var i = 0; i<photos.length; i++) {%>
+          <a href="<%= photos[i].get('url') %>" data-lightbox="surfing">
+          <img class="photo" src="<%= photos[i].get('url') %>"></a>
         <% } %>
       </script>
 
